@@ -5,6 +5,42 @@ const app = express()
 
 const port = 3000   // hardcode value of port
 
+const github_data={
+  "login": "yashgupta88",
+  "id": 224127463,
+  "node_id": "U_kgDODVvp5w",
+  "avatar_url": "https://avatars.githubusercontent.com/u/224127463?v=4",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/yashgupta88",
+  "html_url": "https://github.com/yashgupta88",
+  "followers_url": "https://api.github.com/users/yashgupta88/followers",
+  "following_url": "https://api.github.com/users/yashgupta88/following{/other_user}",
+  "gists_url": "https://api.github.com/users/yashgupta88/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/yashgupta88/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/yashgupta88/subscriptions",
+  "organizations_url": "https://api.github.com/users/yashgupta88/orgs",
+  "repos_url": "https://api.github.com/users/yashgupta88/repos",
+  "events_url": "https://api.github.com/users/yashgupta88/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/yashgupta88/received_events",
+  "type": "User",
+  "user_view_type": "public",
+  "site_admin": false,
+  "name": null,
+  "company": null,
+  "blog": "",
+  "location": null,
+  "email": null,
+  "hireable": null,
+  "bio": null,
+  "twitter_username": null,
+  "public_repos": 9,
+  "public_gists": 0,
+  "followers": 2,
+  "following": 1,
+  "created_at": "2025-08-01T15:57:30Z",
+  "updated_at": "2025-08-01T15:57:37Z"
+}
+
 app.get('/', (req, res) => {  // get request   and '/' means home route . yani ki home route pe listen karo  , req for request and res for response 
   res.send('Hello World!')  // we had send data in reponse 
 })
@@ -24,6 +60,10 @@ app.get('/login',(req,res)=>{  // yaha pe hum '/login' wale route pe listen kar 
 
 app.get('/youtube',(req,res)=>{
     res.send("<h2>Chai aur Code </h2>")
+})
+
+app.get('/github',(req,res)=>{
+    res.json(github_data);
 })
 
 // app has these properties because app is made up of express so , it provides all these 
